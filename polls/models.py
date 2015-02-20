@@ -4,14 +4,14 @@ from django.db import models
 class EstadoVivienda(models.Model):
     estado = models.CharField(max_length=255)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.estado
 
 
 class TipoMejora(models.Model):
     mejora = models.CharField(max_length=255)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.mejora
 
 
@@ -33,7 +33,7 @@ class Vivienda(models.Model):
     def cantidad_personas(self):
         return self.persona_set.all().count()
 
-    def __str__(self):
+    def __unicode__(self):
         return self.familia
 
 
@@ -47,7 +47,7 @@ class Persona(models.Model):
     situacion_laboral = models.CharField(max_length=255)
     ocupacion = models.CharField(max_length=255)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -58,5 +58,5 @@ class TipoVivienda(models.Model):
     techo = models.CharField(max_length=255)
     instalaciones = models.CharField(max_length=255)
 
-    def __str__(self):
+    def __unicode__(self):
         return ''.join([self.piso, self.paredes, self.techo, self.instalaciones])
