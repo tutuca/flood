@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'endless'
+    'polls'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,9 +50,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'pupeteer.urls'
+ROOT_URLCONF = 'flood.urls'
 
-WSGI_APPLICATION = 'pupeteer.wsgi.application'
+WSGI_APPLICATION = 'flood.wsgi.application'
 
 
 # Database
