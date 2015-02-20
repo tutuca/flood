@@ -17,7 +17,7 @@ proyecto:
 Instale las dependencias necesarias:
 
     $ cd ~/Proyectos/flood #el directorio donde hizo el clone 
-    $ pip install -r requirements.txt
+    $ python setup.py develop
     
 
 Modificar los parámetros de la base de datos
@@ -40,18 +40,21 @@ Modificar los parámetros de la base de datos
 
 Primero es necesario crear los esquemas y ejecutar las migraciones si hacen falta:
     
-    $ ./manage.py migrate
+    $ manage migrate
+    $ manage loaddata polls/fixtures/defaults.json
 
-De realizarse cambios en algún modelo ejecutar:
-
-    $ ./manage.py makemigrations website
+> De realizarse cambios en algún modelo ejecutar:
+> 
+>     $ manage makemigrations website
 
 Reemplazar *website* con la aplicación que necesitamos migrar
 
 En este punto tenemos nuestra instancia lista para correr el servidor de 
 desarrollo:
 
-    $ ./manage.py runserver
+    $ manage runserver
+    
+Ahora puede apuntar su navegador a http://localhost:8000 para acceder al sistema.
 
 
 Noticia de licencia
