@@ -14,6 +14,7 @@ class TipoMejora(models.Model):
     def __str__(self):
         return self.mejora
 
+
 # Create your models here.
 class Vivienda(models.Model):
     autor = models.ForeignKey('auth.User', editable=False)
@@ -23,17 +24,17 @@ class Vivienda(models.Model):
     parcela = models.CharField(max_length=255)
     tipo_tenencia = models.CharField(max_length=255)
     recurrencia_inundacion = models.CharField(max_length=255)
-    notas = models.TextField()
+    notas = models.TextField(default='')
     estado_vivienda = models.ForeignKey(EstadoVivienda)
     mejora_necesaria = models.ManyToManyField(TipoMejora)
     alta = models.DateTimeField(auto_now_add=True, editable=False)
 
+    @property
+    def cantidad_personas(self):
+        return self.persona_set.all().count()
+
     def __str__(self):
         return self.familia
-
-    def save_model(self, request, obj):
-        obj.autor = request.user
-        obj.save()
 
 
 class Persona(models.Model):
