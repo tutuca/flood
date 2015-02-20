@@ -41,6 +41,8 @@ Modificar los parámetros de la base de datos
 Primero es necesario crear los esquemas y ejecutar las migraciones si hacen falta:
     
     $ manage migrate
+    $ manage createsuperuser
+    ...
     $ manage loaddata polls/fixtures/defaults.json
 
 > De realizarse cambios en algún modelo ejecutar:
