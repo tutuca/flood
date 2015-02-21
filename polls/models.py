@@ -44,8 +44,11 @@ class Persona(models.Model):
     tiene_dni = models.BooleanField(default=False)
     edad = models.IntegerField()
     parentesco = models.CharField(max_length=255)
+    enfermedades = models.CharField(max_length=255)
     situacion_laboral = models.CharField(max_length=255)
     ocupacion = models.CharField(max_length=255)
+    herramientas = models.TextField(default='')
+    notas = models.TextField(default='')
 
     def __unicode__(self):
         return self.nombre
