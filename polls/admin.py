@@ -3,10 +3,10 @@ from . import models
 
 
 class PersonaAdmin(admin.ModelAdmin):
-    list_filter = ('vivienda__familia', 'vivienda__estado_vivienda',)
+    list_filter = ('vivienda', 'vivienda__familia', 'vivienda__estado_vivienda',)
+    list_display = ('nombre', 'vivienda', 'edad', 'dni', 'tiene_dni')
 
-
-class PersonaInline(admin.TabularInline):
+class PersonaInline(admin.StackedInline):
     model = models.Persona
 
 
