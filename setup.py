@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'manage = flood.manage:do_manage',
+            'runserver = flood.manage:do_runserver',
         ],
     },
 )
